@@ -1,9 +1,8 @@
-######################################## Subdomain Enumerator – Team Intruders ####################################################################
+<h1>Subdomain Enumerator – Team Intruders</h1>
 
 A multithreaded subdomain enumeration tool built in Python.
 Developed as part of Internship Task 2 by Team Intruders.
-
-==================================================== Features ======================================================================
+ <h2>Features</h2>
 
 - Brute-force subdomain discovery using a wordlist
 
@@ -25,16 +24,16 @@ Developed as part of Internship Task 2 by Team Intruders.
 
 - ASCII banner branding with pyfiglet
 
-========================== Installation ===========================
-Requirements
+<h2>Installation</h2>
+<h3>Requirements</h3>
 
 	Python 3.x
 
-Install dependencies:
+<h3>Install dependencies:</h3>
 
 	pip install tqdm colorama pyfiglet
 
-======================= Usage ===================================
+<h2>Usage</h2>
 Basic usage (default settings):
 	python bruteforce.py -d example.com
 
@@ -47,8 +46,8 @@ Verbose mode (show not found subdomains):
 Increase threads for faster scanning:
 	python bruteforce.py -d example.com -t 50
 
-========================== Output ================================
-Terminal (verbose mode with colors):
+ <h2>Output</h2>
+<h3>Terminal (verbose mode with colors):</h3>
 		Subdomain                                IP
 	------------------------------------------------------------
 	Checking subdomains:  45%|█████      | 450/1000 [00:05<00:06, 90.2sub/s]
@@ -57,13 +56,12 @@ Terminal (verbose mode with colors):
 	mail.example.com                       93.184.216.34
 
 
-Output file (results.csv):
+<h3>Output file (results.csv):</h3>
 	Subdomain,IP
 	www.example.com,93.184.216.34
 	mail.example.com,93.184.216.34
 
-
-======================== Authors (Team Intruders) =========================
+<h2>Authors (Team Intruders)</h2>
 
 1) Threem Amna (Team Lead)
 
@@ -81,7 +79,7 @@ Output file (results.csv):
 
 8) Hamid Iqbal
 
-================================ Notes ==================================
+<h2>Notes</h2>
 
 Default wordlist: wordlist/top1000subdomains.txt
 

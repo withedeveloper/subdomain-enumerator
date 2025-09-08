@@ -1,4 +1,4 @@
-<h1>🔎 Subdomain Enumerator – Team Intruders</h1>
+<h1> Subdomain Enumerator – Team Intruders</h1>
 
 A Python-based tool for discovering hidden subdomains using both **brute-force techniques** and **API-based enumeration**.  
 eveloped as part of Internship Task 2 by <b>Team Intruders</b>.

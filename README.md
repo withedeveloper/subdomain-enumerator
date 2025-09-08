@@ -1,85 +1,112 @@
-<h1>Subdomain Enumerator – Team Intruders</h1>
+<h1>🔎 Subdomain Enumerator – Team Intruders</h1>
 
-A multithreaded subdomain enumeration tool built in Python.
-Developed as part of Internship Task 2 by Team Intruders.
- <h2>Features</h2>
+A Python-based tool for discovering hidden subdomains using both **brute-force techniques** and **API-based enumeration**.  
+eveloped as part of Internship Task 2 by <b>Team Intruders</b>.
 
-- Brute-force subdomain discovery using a wordlist
+---
 
-- Multithreading with configurable thread count (--threads)
+<h2> Features</h2>
 
-- Colored output:
+- <b>Brute-force subdomain discovery</b> with wordlist support  
+- <b>API-based enumeration</b>:  
+- CertSpotter (no API key required)  
+- VirusTotal (requires API key)  
+- <b>Combined mode</b> – run Brute-force + CertSpotter together  
+- <b>Multithreading</b> with configurable thread count (`--threads`)  
+- <b>Colored output</b>:
+- Green → Valid subdomains with IPs  
+- Red → Not found (only in verbose mode)  
+- <b>Verbose mode (-v)</b> to show failed attempts  
+- <b>Timeout handling</b> (default 3s per DNS request)  
+- <b>Progress bar</b> for brute-force enumeration (via tqdm)  
+- <b>Results export</b>:  
+- CSV (`Subdomain,IP`) for brute-force/combined  
+- TXT (list of subdomains) for API results  
+-  <b>ASCII banner branding</b> with pyfiglet  
 
-- Green → Valid subdomains with IPs
+---
 
-- Red → Not found (shown only in verbose mode)
+<h2> Installation</h2>
 
-- Verbose mode (-v) to display failed attempts
-
-- Timeout handling (default 3s per DNS request)
-
-- Progress bar for live tracking of enumeration progress (via tqdm)
-
-- CSV results export (Subdomain,IP)
-
-- ASCII banner branding with pyfiglet
-
-<h2>Installation</h2>
 <h3>Requirements</h3>
 
-	Python 3.x
+- Python 3.x  
 
 <h3>Install dependencies:</h3>
 
-	pip install tqdm colorama pyfiglet
+```bash
+pip install requests tqdm colorama pyfiglet
 
-<h2>Usage</h2>
-Basic usage (default settings):
-	python bruteforce.py -d example.com
+<h2> Usage</h2>
+
+Run the tool with different modes:
+
+<h3>🔹 Brute-force Enumeration</h3>
+
+python subenum.py -d example.com -m brute
 
 Custom wordlist & output file:
-	python bruteforce.py -d example.com -w wordlist.txt -o results.csv
+	python subenum.py -d example.com -m brute -w wordlist.txt -o results.csv
 
 Verbose mode (show not found subdomains):
-	python bruteforce.py -d example.com -v
+	python subenum.py -d example.com -m brute -v
 
 Increase threads for faster scanning:
-	python bruteforce.py -d example.com -t 50
+	python subenum.py -d example.com -m brute -t 50
 
- <h2>Output</h2>
-<h3>Terminal (verbose mode with colors):</h3>
-		Subdomain                                IP
-	------------------------------------------------------------
-	Checking subdomains:  45%|█████      | 450/1000 [00:05<00:06, 90.2sub/s]
-	www.example.com                       93.184.216.34
-	[-] test.example.com -> Not found
-	mail.example.com                       93.184.216.34
+<h3>🔹 API-Based Enumeration</h3>
+
+CertSpotter (no API key needed):
+	python subenum.py -d example.com -m certspotter
 
 
-<h3>Output file (results.csv):</h3>
-	Subdomain,IP
-	www.example.com,93.184.216.34
-	mail.example.com,93.184.216.34
 
-<h2>Authors (Team Intruders)</h2>
+VirusTotal (requires API key):
+	python subenum.py -d example.com -m virustotal -k <your_api_key>
 
-1) Threem Amna (Team Lead)
+<h3>🔹 Combined Mode</h3>
 
-2) Waqas Ikram (Me)
+Run both Brute-force + CertSpotter:
+	
+python subenum.py -d example.com -m both
 
-3) Azhar Ahmad
+<h2> Output</h2> <h3>Terminal (verbose mode with colors):</h3>
+Subdomain                                IP
+------------------------------------------------------------
+Bruteforcing:  45%|█████      | 450/1000 [00:05<00:06, 90.2sub/s]
+www.example.com                       93.184.216.34
+[-] test.example.com -> Not found
+mail.example.com                       93.184.216.34
 
-4) Muhamad Arfa
+ <h3>Output file (results.csv):</h3>
+ Subdomain,IP
+www.example.com,93.184.216.34
+mail.example.com,93.184.216.34
 
-5) Khansa Kaushaf
+ <h3>API output (TXT):</h3>
+ Subdomain
+www.example.com
+mail.example.com
 
-6) Asees Shah
+<h2> Authors – Team Intruders</h2>
 
-7) Ammad Hassan
+Threem Amna (Team Lead)
 
-8) Hamid Iqbal
+Waqas Ikram (Me)
 
-<h2>Notes</h2>
+Azhar Ahmad
+
+Muhamad Arfa
+
+Khansa Kaushaf
+
+Asees Shah
+
+Ammad Hassan
+
+Hamid Iqbal
+
+<h2> Notes</h2>
 
 Default wordlist: wordlist/top1000subdomains.txt
 
@@ -87,6 +114,7 @@ Default output file: output/results.csv
 
 Default threads: 20
 
-Increase threads with caution (e.g., --threads 50) depending on system performance.
+Use higher threads (--threads 50) cautiously depending on system performance
+
 
 

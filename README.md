@@ -33,8 +33,6 @@ eveloped as part of Internship Task 2 by <b>Team Intruders</b>.
 - Python 3.x  
 
 <h3>Install dependencies:</h3>
-
-```bash
 pip install requests tqdm colorama pyfiglet
 
 <h2> Usage</h2>
@@ -115,6 +113,7 @@ Default output file: output/results.csv
 Default threads: 20
 
 Use higher threads (--threads 50) cautiously depending on system performance
+
 
 
 

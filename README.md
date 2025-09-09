@@ -81,17 +81,23 @@ mail.example.com
 www.example.com
 mail.example.com
 
-<h2>👥 Authors – Team Intruders</h2>
+<h2>Authors – Team Intruders</h2>
 
 Threem Amna (Team Lead)
 
 Waqas Ikram (Me)
 
-<h2>👥 Author </h2>
+Asees Shah
+
+Muhammad Arfa
+
+Khansa Kashaf
+
+<h2>Author </h2>
 
 Waqas Ikram
 
-<h2>📝 Notes</h2>
+<h2>Notes</h2>
 
 Default wordlist: wordlist/top1000subdomains.txt
 

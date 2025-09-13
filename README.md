@@ -41,7 +41,7 @@ Developed as part of Internship Task 2 by <b>Team Intruders</b>.
 
 <h3>Install dependencies:</h3>
 
-```bash
+
 pip install requests tqdm colorama pyfiglet
 <h2>Usage</h2> <h3>🔹 Subdomain Enumeration (Part 1 & 2)</h3>
 
@@ -124,8 +124,3 @@ Default threads: 20
 Increase threads (--threads 50) cautiously depending on system performance
 
 IP extraction helps identify shared infrastructure and private vs public IPs
-
-
-
-
-
